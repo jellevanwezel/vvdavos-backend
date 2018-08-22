@@ -1,12 +1,9 @@
 {
-  "item_title": "invite",
+  "item_title": "event_invites",
   "item_methods": [
-    "PATCH"
+    "PATCH",
+    "GET"
   ],
-  "item_owner_rel" : "user_id",
-  "datasource": {
-    "source": "event_invites"
-  },
   "allowed_roles": [
     {
       "role": "player",
@@ -23,10 +20,15 @@
       ]
     }
   ],
+  "allowed_item_roles" : {"$ref" : "#/allowed_roles"},
+  "datasource": {
+    "source": "event_invites"
+  },
   "schema": {
     "attending": {
       "type": "boolean",
-      "required": true
+      "required": true,
+      "player_owns_subscription": "user_id"
     }
   }
 }

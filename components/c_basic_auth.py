@@ -3,6 +3,7 @@ from eve.auth import BasicAuth
 
 
 class CBasicAuth(BasicAuth):  # todo hash obviously
+
     def check_auth(self, username, password, allowed_roles, resource, method):
         users = flask.current_app.data.driver.db['users']
         user = users.find_one({'email': username})

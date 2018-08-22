@@ -17,6 +17,7 @@
       ]
     }
   ],
+  "allowed_item_roles" : {"$ref" : "#/allowed_roles"},
   "item_methods": [
     "GET",
     "PUT",

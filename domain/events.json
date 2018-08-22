@@ -1,11 +1,5 @@
 {
   "item_title": "event",
-  "item_methods": [
-    "GET",
-    "PUT",
-    "PATCH",
-    "DELETE"
-  ],
   "allowed_roles": [
     {
       "role": "player",
@@ -16,12 +10,20 @@
     {
       "role": "admin",
       "methods": [
+        "POST",
         "GET",
         "PUT",
         "PATCH",
         "DELETE"
       ]
     }
+  ],
+  "allowed_item_roles" : {"$ref" : "#/allowed_roles"},
+  "item_methods": [
+    "GET",
+    "PUT",
+    "PATCH",
+    "DELETE"
   ],
   "schema": {
     "name": {

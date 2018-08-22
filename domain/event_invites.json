@@ -1,5 +1,24 @@
 {
   "item_title": "invite",
+  "allowed_roles": [
+    {
+      "role": "player",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "role": "admin",
+      "methods": [
+        "POST",
+        "GET",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ]
+    }
+  ],
+  "allowed_item_roles" : {"$ref" : "#/allowed_roles"},
   "item_methods": [
     "GET",
     "PUT",

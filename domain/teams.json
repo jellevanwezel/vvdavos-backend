@@ -23,6 +23,7 @@
       ]
     }
   ],
+  "allowed_item_roles" : {"$ref" : "#/allowed_roles"},
   "schema": {
     "name": {
       "type": "string",
