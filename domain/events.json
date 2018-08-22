@@ -1,0 +1,72 @@
+{
+  "item_title": "event",
+  "item_methods": [
+    "GET",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "allowed_roles": [
+    {
+      "role": "player",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "role": "admin",
+      "methods": [
+        "GET",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ]
+    }
+  ],
+  "schema": {
+    "name": {
+      "type": "string",
+      "minlength": 1,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "minlength": 1,
+      "required": false
+    },
+    "start_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "end_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "subscription_start": {
+      "type": "datetime",
+      "required": true
+    },
+    "subscription_end": {
+      "type": "datetime",
+      "required": true
+    },
+    "team_id": {
+      "type": "integer",
+      "required": true
+    },
+    "min_attendents": {
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    "chain_id": {
+      "type": "string",
+      "required": false,
+      "empty": true,
+      "relationexists": {
+        "col_name": "event_chains",
+        "rel_key": "_id"
+      }
+    }
+  }
+}

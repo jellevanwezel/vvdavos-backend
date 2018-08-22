@@ -1,0 +1,32 @@
+{
+  "item_title": "invite",
+  "item_methods": [
+    "PATCH"
+  ],
+  "item_owner_rel" : "user_id",
+  "datasource": {
+    "source": "event_invites"
+  },
+  "allowed_roles": [
+    {
+      "role": "player",
+      "methods": [
+        "PATCH",
+        "GET"
+      ]
+    },
+    {
+      "role": "admin",
+      "methods": [
+        "PATCH",
+        "GET"
+      ]
+    }
+  ],
+  "schema": {
+    "attending": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "item_title": "user",
+  "allowed_roles": [
+    {
+      "role": "player",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "role": "admin",
+      "methods": [
+        "GET",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ]
+    }
+  ],
+  "item_methods": [
+    "GET",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "schema": {
+    "email": {
+      "type": "string",
+      "minlength": 6,
+      "maxlength": 128,
+      "required": true,
+      "regex": "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)",
+      "unique": true
+    },
+    "firstname": {
+      "type": "string",
+      "minlength": 1,
+      "maxlength": 10,
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "minlength": 1,
+      "maxlength": 15,
+      "required": true
+    },
+    "birthdate": {
+      "type": "datetime",
+      "required": false
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "minlength": 6
+    },
+    "role": {
+      "type": "list",
+      "allowed": [
+        "admin",
+        "player",
+        "trainer"
+      ]
+    },
+    "team_id": {
+      "type": "string",
+      "relationexists": {
+        "col_name": "teams",
+        "rel_key": "_id"
+      },
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "item_title": "invite",
+  "item_methods": [
+    "GET",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "schema": {
+    "user_id": {
+      "type": "string",
+      "required": true,
+      "relationexists": {
+        "col_name": "users",
+        "rel_key": "_id"
+      }
+    },
+    "event_id": {
+      "type": "string",
+      "required": true,
+      "relationexists": {
+        "col_name": "events",
+        "rel_key": "_id"
+      }
+    },
+    "attending": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}

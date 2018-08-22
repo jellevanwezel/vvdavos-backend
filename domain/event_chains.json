@@ -1,0 +1,32 @@
+{
+  "item_title": "event_chain",
+  "item_methods": [
+    "GET",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "allowed_roles": [
+    {
+      "role": "player",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "role": "admin",
+      "methods": [
+        "GET",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ]
+    }
+  ],
+  "schema": {
+    "events": {
+      "type": "list",
+      "required": true
+    }
+  }
+}

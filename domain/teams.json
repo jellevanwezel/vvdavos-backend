@@ -1,0 +1,38 @@
+{
+  "item_title": "team",
+  "item_methods": [
+    "GET",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "allowed_roles": [
+    {
+      "role": "player",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "role": "admin",
+      "methods": [
+        "GET",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ]
+    }
+  ],
+  "schema": {
+    "name": {
+      "type": "string",
+      "minlength": 1,
+      "maxlength": 128,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
