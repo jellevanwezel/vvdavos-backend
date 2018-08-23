@@ -1,8 +1,7 @@
 from eve import Eve
 import jsonref
 
-from eve.auth import requires_auth
-from flask import request
+import components.event_hooks as hooks
 
 from components.c_basic_auth import CBasicAuth
 from components.c_validator import CValidator
@@ -31,10 +30,6 @@ domain = {
     "subscriptions": read_json('./domain/subscriptions.json'),
 }
 
-# def on_update_subscription(updates, original):
-#     pass
-
-
 db_config = read_json('./config/mongo.json')
 server_config = read_json('./config/server.json')
 
@@ -47,12 +42,8 @@ app = Eve(
     auth=CBasicAuth
 )
 
-#app.on_update_subscription = on_update_subscription
-
-# @app.route('/subscribe_event/',methods=["POST"])
-# def subscribe_event():
-#     print request.json
-#     return 'Hello World!'
+app.on_pre_GET_event += hooks.pre_event_get_hook
+app.on_pre_POST_event += hooks.pre_event_post_hook
 
 if __name__ == '__main__':
     app.run()
