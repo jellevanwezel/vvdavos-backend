@@ -1,4 +1,8 @@
 {
-  "RESOURCE_METHODS": ["GET","POST","DELETE"],
+  "RESOURCE_METHODS": [
+    "GET",
+    "POST",
+    "DELETE"
+  ],
   "DATE_FORMAT": "%d-%m-%Y %H:%M:%S"
 }

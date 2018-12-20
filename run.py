@@ -1,5 +1,6 @@
 from eve import Eve
 import jsonref
+from flask_cors import CORS
 
 import components.event_hooks as hooks
 
@@ -42,8 +43,7 @@ app = Eve(
     auth=CBasicAuth
 )
 
-app.on_pre_GET_event += hooks.pre_event_get_hook
-app.on_pre_POST_event += hooks.pre_event_post_hook
+CORS(app)
 
 if __name__ == '__main__':
     app.run()

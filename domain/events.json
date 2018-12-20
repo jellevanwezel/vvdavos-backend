@@ -7,6 +7,12 @@
         "GET"
       ]
     },
+        {
+      "role": "trainer",
+      "methods": [
+        "GET"
+      ]
+    },
     {
       "role": "admin",
       "methods": [
@@ -18,7 +24,9 @@
       ]
     }
   ],
-  "allowed_item_roles" : {"$ref" : "#/allowed_roles"},
+  "allowed_item_roles": {
+    "$ref": "#/allowed_roles"
+  },
   "item_methods": [
     "GET",
     "PUT",
